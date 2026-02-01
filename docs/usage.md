@@ -48,6 +48,16 @@ You can switch to another account (e.g., from a spread betting to a CFD account)
 client.session.switch_account("NEW_ACCOUNT_ID")
 ```
 
+## Accounts Service
+
+Retrieve a list of all accounts belonging to the client:
+
+```python
+accounts_data = client.accounts.get_accounts()
+for account in accounts_data['accounts']:
+    print(account['accountId'])
+```
+
 ### Logging Out
 
 Always logout when finished to invalidate your tokens:

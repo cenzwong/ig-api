@@ -2,6 +2,8 @@ import os
 from dotenv import load_dotenv
 from .core.api import ApiClient
 from .services.session import SessionService
+from .services.accounts import AccountsService
+from .services.markets import MarketService
 
 class IGClient:
     """
@@ -9,6 +11,8 @@ class IGClient:
     
     Attributes:
         session (SessionService): Service for session management.
+        accounts (AccountsService): Service for account management.
+        markets (MarketService): Service for market management.
     """
 
     def __init__(self):
@@ -32,6 +36,8 @@ class IGClient:
         
         # Services
         self.session = SessionService(self.api_client)
+        self.accounts = AccountsService(self.api_client)
+        self.markets = MarketService(self.api_client)
 
     def connect(self) -> dict:
         """

@@ -27,11 +27,11 @@ plugins:
         python:
           paths: [src]
   - mkdocs-jupyter:
-      execute: true
+      execute: false
 
 nav:
   - Home: index.md
   - Usage: usage.md
   - API Reference: api.md
   - Samples:
-      - Connect Client: sample/connect_client.ipynb
+      - Connect Client: sample/session_demo.ipynb

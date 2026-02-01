@@ -42,7 +42,7 @@ class ApiClient:
         self.cst = None
         self.x_security_token = None
 
-    def request(self, method: str, endpoint: str, version: str = "1", auth: bool = True, data: Optional[Dict] = None) -> requests.Response:
+    def request(self, method: str, endpoint: str, version: str = "1", auth: bool = True, data: Optional[Dict] = None, params: Optional[Dict] = None) -> requests.Response:
         """
         Executes an HTTP request.
         
@@ -52,6 +52,7 @@ class ApiClient:
             version: API version for the header.
             auth: Whether to include auth tokens.
             data: JSON payload.
+            params: Query parameters.
             
         Returns:
             The raw response object.
@@ -63,7 +64,7 @@ class ApiClient:
         headers = self._get_headers(version=version, auth=auth)
         
         try:
-            response = requests.request(method, url, headers=headers, json=data)
+            response = requests.request(method, url, headers=headers, json=data, params=params)
             
             # Check for standard HTTP errors (but let caller handle specific logic like 412)
             if not response.ok:

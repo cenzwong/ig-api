@@ -19,3 +19,7 @@ This project uses `uv` for dependency management.
     ```bash
     uv run main.py
     ```
+
+## Notebooks
+
+Sample notebooks are available in `docs/sample/`.
