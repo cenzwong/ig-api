@@ -28,3 +28,30 @@ The client looks for the following in a `.env` file:
 - `IG_USERNAME`
 - `IG_PASSWORD`
 - `IG_ENV` (defaults to `demo`)
+
+## Session Management
+
+The client supports full session lifecycle management.
+
+### Reading Session Details
+
+```python
+details = client.session.read()
+print(f"Client ID: {details.get('clientId')}")
+```
+
+### Switching Accounts
+
+You can switch to another account (e.g., from a spread betting to a CFD account):
+
+```python
+client.session.switch_account("NEW_ACCOUNT_ID")
+```
+
+### Logging Out
+
+Always logout when finished to invalidate your tokens:
+
+```python
+client.logout()
+```

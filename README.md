@@ -17,5 +17,5 @@ This project uses `uv` for dependency management.
 
 3.  **Run the script**:
     ```bash
-    uv run src/ig_api/main.py
+    uv run main.py
     ```
