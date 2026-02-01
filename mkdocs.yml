@@ -26,7 +26,8 @@ plugins:
       handlers:
         python:
           paths: [src]
-  - mkdocs-jupyter
+  - mkdocs-jupyter:
+      execute: true
 
 nav:
   - Home: index.md
